@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+		<main role="main">
+
+			<div class="container col-md-11"><br>
+				<!-- Pesquisar pelo o nome-->
+				<form th:action="@{/buscarLivros}" method="post">
+					<div class="form-inline info">
+						<input type="text" class="form-control" id="nome" placeholder="Buscar livro" th:name="nomeLivro"
+							size="25" autofocus>
+						<button type="submit" class="btn btn-primary">
+
+							<i class="fa fa-search" style="font-size: 25px"></i>
+						</button>
+					</div>
+				</form>
+
+				<br>
+				<div class="row" id="systLivro_row" th:insert="livro/livro-list-card">
+					<!-- Fragimentos de listar cards via ajax-->
+				</div>
+				<div id="loader-img" class="mx-auto loader">
+					<br>
+				</div>
+				<br> <a id="fim-btn" type='button' href='#' class='btn btn-info mx-auto'>Fim! Voltar ao topo da
+					pagina</a>
+				<br> <br>
+			</div>
+
+		</main>
+		<script th:src="@{/js/loader/card-systLivro.js?v={version} ( version=${#strings.randomAlphanumeric(3)} )}"
+			th:fragment="js"></script>
+		<script th:inline="javascript" th:fragment="inlinescript"></script>
+
+	</section>
+</body>
+
+</html>

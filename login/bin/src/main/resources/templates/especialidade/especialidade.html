@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+		<main role="main">
+			<div class="album bg-light">
+
+				<div>
+					<img class="d-block mx-auto" th:src="@{/image/top.png}" width="1080" height="80">
+				</div>
+				<div class="container">
+					<h2 class="d-flex justify-content-center">Especialidade de
+						Marketing ADS</h2>
+					<hr class="id_hr1">
+					<hr class="id_hr2">
+					<hr class="id_hr3">
+					<div class="container">
+
+						<div class="d-flex justify-content-center">
+							<div class="col-md-12">
+								<div th:replace="fragments/alert"></div>
+
+								<form th:action="@{/especialidades/salvar}" th:object="${especialidade}" method="POST"
+									class="was-validated">
+
+									<div class="form-group row">
+										<label for="especialidade" class="col-sm-2 col-form-label">Especialidade</label>
+										<div class="col-sm-12">
+											<input type="text" class="form-control" th:field="*{titulo}"
+												id="especialidade" placeholder="Marketing * ADS" required />
+											<div class="invalid-feedback">Especialidade é requerido.</div>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="especialidade" class="col-sm-2 col-form-label">Descrição</label>
+										<div class="col-sm-12">
+											<textarea class="form-control" th:field="*{descricao}" id="descricao"
+												rows="3"></textarea>
+											<small class="form-text text-muted">Se desejar,
+												adicione uma descrição sobre a especialidade.</small>
+										</div>
+									</div>
+
+									<input type="hidden" th:field="*{id}" />
+
+									<div class="form-group row">
+										<div class="col-sm-10">
+											<button type="submit" class="btn btn-primary" data-toggle="tooltip"
+												data-placement="right" title="Salvar">
+												Cadastrar <i class=" col-md-2 bi bi-save2"></i>
+											</button>
+
+										</div>
+									</div>
+								</form>
+
+								<hr class="id_hr">
+								<h2 class="d-flex justify-content-center">Lista de Especialidades</h2>
+								<hr class="id_hr1">
+								<hr class="id_hr2">
+								<hr class="id_hr3">
+								<table id="table-especializacao"
+									class="table table-sm table-striped table-bordered nowrap" style="width: 100%">
+									<thead class="thead-dark">
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Especialidade</th>
+											<th scope="col">Editar</th>
+											<th scope="col">Excluir</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script th:src="@{/js/cadSystem/especialidade.js?(v=${version})}" th:fragment="js"></script>
+				<script th:inline="javascript" th:fragment="inlinescript"></script>
+		</main>
+	</section>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<div class="col-md-3" th:each="fisi : ${listaFisicos}">
+
+	<figure class="card card-product">
+		<div th:id="${fisi.id}" class="card">
+			<!-- Imagem -->
+			<div class="img-wrap bg-light text-dark">
+
+				<div class="input-box">
+					<div class="card img-wrap bg-light text-dark">
+						<div class="card_image_list">
+
+							<a class="noteID1 badge badge-pill text-white" style="font-size: 14px"
+								th:href="@{/editarFisico(id=${fisi.id})}">
+								<span th:text="|ID:${fisi.id}|">Seasonal</span></a>
+
+							<a class="noteID2 badge badge-pill badge-warning" target="_blank" rel="noopener noreferrer"
+								th:href="${fisi.link}">LINK</a>
+
+							<title class=" noteID3 badge badge-pill badge-warning"
+								th:text="|${#strings.abbreviate(fisi.fornecedor.nome, 26)}|"></title>
+
+							<a class="noteID4 badge badge-pill badge-primary text-white" target="_blank"
+								rel="noopener noreferrer" th:href="${fisi.fornecedor.link}">SITE</a>
+
+							<a class="noteID6 badge badge-pill badge-success text-white" target="_blank"
+								rel="noopener noreferrer" th:href="${fisi.checkout}">Check Out</a>
+
+							<img alt="Image" class="img_prod_maior" th:src="|/imagemFisico/${fisi.id}|" />
+
+						</div>
+					</div>
+				</div>
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Fisico: ${#strings.abbreviate(fisi.nome, 30)}|"></label>
+				</div>		
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Categoria: ${#strings.abbreviate(fisi.categoria.titulo, 15)}|"></label>
+				</div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Formato: ${#strings.abbreviate(fisi.formato.titulo, 16)}|"></label>
+				</div>
+				
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Click: ${#strings.abbreviate(fisi.porclik.titulo, 22)}|"></label>
+				</div>
+				<div class="dropdown-divider"></div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Preço: R$: ${#strings.abbreviate(fisi.valorProduto.valor, 15)}|"></label>
+				</div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Parcelas: ${#strings.abbreviate(fisi.qtdParcela.parcelamento, 10)}*|"></label>
+				</div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Mensalidade: R$: ${#strings.abbreviate(fisi.valorParcela.valor, 12)}|"></label>
+				</div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Desconto: ${#strings.abbreviate(fisi.pctgDesconto.desconto, 3)}% OFF|"></label>
+				</div>
+
+
+				<!--figcaption class="info-wrap ">
+						<div style="text-align:center">
+							<a th:href="@{/editarFisico(id=${fisi.id})}" class="btn btn-primary " style="font-size: 14px">
+								Editar </a>
+							<a th:href="@{/removerFisico(id=${fisi.id})}" class="btn btn-danger"
+								style="font-size: 14px" data-toggle="modal" data-target="#confirm-modal">Remover</a>
+						</div>
+					</figcaption-->
+			</div>
+		</div>
+	</figure>
+</div>

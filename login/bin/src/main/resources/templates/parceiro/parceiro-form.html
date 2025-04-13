@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<section class="layout-content" layout:fragment="corpo">
+		<main role="main">
+
+			<div class="container col-md-11">
+
+				<form th:action="@{/salvarParceiro}" method="POST" th:object="${parceiro}"
+					enctype="multipart/form-data" class="was-validated">
+					<input type="hidden" th:field="*{id}">
+					<br>
+					<div class="card w-100">
+						<div class="card-header">
+							<div style="text-align:center">
+								<h2 class="font-italic">Nova Indicação do Site</h2>
+								<hr class="id_hr1">
+								<hr class="id_hr2">
+								<hr class="id_hr3">
+							</div>
+							<br><br>
+							<div th:replace="fragments/alert"></div>
+							<div th:insert="parceiro/fragments/form-fragments"></div>
+							<ul class="nav nav-pills card-header-pills">
+								<li class="nav-item">
+									<div class="col-md-2">
+										<button type="submit" class="btn btn-primary"><i class="fas fa-save"></i>
+											Cadastrar
+										</button>
+									</div>
+								</li>
+								<li class="nav-item">
+									<div class="col-md-2 ">
+										<a class="dropdown-item " th:href="@{/listarParceiros}">
+											<i class="fa-solid fa-network-wired fa-rotate-90"></i> Parceiros</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<br> <br>
+				</form>
+			</div>
+			<script th:src="@{/js/parceiro.js?(v=${version})}" th:fragment="js"></script>
+			<script th:inline="javascript" th:fragment="inlinescript"></script>
+		</main>
+	</section>
+</body>
+
+</html>

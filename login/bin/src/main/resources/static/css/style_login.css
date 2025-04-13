@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins%3Awght%40400%3B500&display=swap%27%29%3B);
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(93, 93, 93);
+}
+
+/*------------------------ login container | contêiner de login --------------->*/
+.box-area{
+    width: 1060px;
+
+}
+/*------------------------ left box | caixa esquerda ---------------*/
+.right-box{
+    padding: 40px 30px 40px 40px;
+}
+
+/*------------------------ affiliated | caixa certa ---------------*/
+::placeholder{
+    font-size: 16px;
+}
+
+/*------------------------ right box | afiliado ---------------*/
+.afiliado {
+	height: 40px;
+	width: 200px;
+}
+
+/*------------------------ Form small screens | Forme telas pequenas ---------------*/
+@media screen and (max-width: 768px) {
+    #footer_content{
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #footer_content{
+        grid-template-columns: repeat(1,1fr);
+        padding: 3rem 2rem;
+    }
+}

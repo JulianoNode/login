@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+		<main role="main">
+			<div class="album bg-light">
+    			<div>
+					<img class="d-block mx-auto" th:src="@{/image/top.png}" width="1080" height="80">
+				</div>
+				<div class="container">
+					<div class="container">
+						<h2 class="d-flex justify-content-center">Cadastre Valor do
+							Produto</h2>
+						<hr class="id_hr1">
+						<hr class="id_hr2">
+						<hr class="id_hr3">
+					</div>
+
+					<div class="d-flex justify-content-center">
+						<div class="col-md-12">
+							<div th:replace="fragments/alert"></div>
+							<form th:action="@{/valorProdutos/salvar}" th:object="${valorProduto}" method="POST"
+								class="was-validated">
+
+								<div class="form-group row">
+									<label for="valorProduto" class="col-sm-2 col-form-label">Valor
+										da Produto:</label>
+									<div class="col-sm-12">
+
+										<input type="text" class="form-control" th:field="*{valor}" id="valorProduto"
+											maxlength="12" onKeyPress="return(moeda(this,'.',',',event))"
+											placeholder="Valor da Produto no min= 1 max= 9.999.999,99" />
+										<p style="font-size: 18px;">
+											Valor da Produto no <small style="color:rgb(255, 99, 71)">min= 1 max=
+												9.999.999,99</small>
+										</p>
+										<div class="invalid-feedback">Valor do Produto é
+											requerida min= 1 max= 999 .</div>
+									</div>
+								</div>
+
+								<input type="hidden" th:field="*{id}" />
+
+								<div class="form-group row">
+									<div class="col-sm-10">
+										<button type="submit" class="btn btn-primary" data-toggle="tooltip"
+											data-placement="right" title="Cadastrar">
+											Cadastrar <i class="fas fa-save"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+
+							<hr class="id_hr" />
+
+							<h2 class="d-flex justify-content-center">Lista Valor do
+								Produto</h2>
+							<hr class="id_hr1">
+							<hr class="id_hr2">
+							<hr class="id_hr3">
+
+							<table id="table-valorProdutoCrud"
+								class="table table-sm table-striped table-bordered nowrap" style="width: 100%">
+								<thead class="thead-dark">
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Valor da Produto</th>
+
+										<th scope="col">Editar</th>
+										<th scope="col">Excluir</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</main>
+	</section>
+	<script th:src="@{/js/cadSystem/valorProduto.js?(v=${version})}" th:fragment="js"></script>
+	<script th:inline="javascript" th:fragment="inlinescript">
+		function moeda(a, e, r, t) {
+			let n = ""
+				, h = j = 0
+				, u = tamanho2 = 0
+				, l = ajd2 = ""
+				, o = window.Event ? t.which : t.keyCode;
+			if (13 == o || 8 == o)
+				return !0;
+			if (n = String.fromCharCode(o),
+				-1 == "0123456789".indexOf(n))
+				return !1;
+			for (u = a.value.length,
+				h = 0; h < u && ("0" == a.value.charAt(h) || a.value.charAt(h) == r); h++)
+				;
+			for (l = ""; h < u; h++)
+				-1 != "0123456789".indexOf(a.value.charAt(h)) && (l += a.value.charAt(h));
+			if (l += n,
+				0 == (u = l.length) && (a.value = ""),
+				1 == u && (a.value = "0" + r + "0" + l),
+				2 == u && (a.value = "0" + r + l),
+				u > 2) {
+				for (ajd2 = "",
+					j = 0,
+					h = u - 3; h >= 0; h--)
+					3 == j && (ajd2 += e,
+						j = 0),
+						ajd2 += l.charAt(h),
+						j++;
+				for (a.value = "",
+					tamanho2 = ajd2.length,
+					h = tamanho2 - 1; h >= 0; h--)
+					a.value += ajd2.charAt(h);
+				a.value += r + l.substr(u - 2, u)
+			}
+			return !1
+		}	
+	</script>
+</body>
+
+</html>

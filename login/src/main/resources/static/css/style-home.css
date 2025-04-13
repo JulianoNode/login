@@ -1,0 +1,72 @@
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* linhas do hr */
+
+.id_hr {
+  margin: 30px auto;
+  width: 1080px;
+  border-top: 2px solid #c89b3f;
+}
+
+.id_hr1 {
+  margin: 4px auto;
+  width: 300px;
+  border-top: 2px solid #c89b3f;
+}
+.id_hr2 {
+  margin: 4px auto;
+  width: 150px;
+  border-top: 2px solid #c89b3f;
+}
+
+.id_hr3 {
+  margin: 4px auto;
+  width: 50px;
+  border-top: 2px solid #c89b3f;
+}
+
+
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 200;
+}
+
+.jumbotron .container {
+  max-width: 80rem;
+}
+
+.modal .modal-body input, .modal .modal-body textarea{
+    border: 1px solid #e6e6e6;
+    box-shadow: none;
+}
+
+.modal-header h4.modal-title {
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal-body label {
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* jQuery loading autocomplete */
+.ui-autocomplete-loading {
+  background: white url("/image/ui-anim_basic_16x16.gif") right center no-repeat;
+}

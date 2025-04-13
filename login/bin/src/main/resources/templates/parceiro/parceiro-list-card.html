@@ -1,0 +1,50 @@
+<div class="col-md-3" th:each="parc : ${listaParceiros}">
+
+	<figure class="card card-product">
+		<div th:id="${parc.id}" class="card">
+			<!-- Imagem -->
+			<div class="img-wrap bg-light text-dark">
+
+				<div class="input-box">
+					<div class="card img-wrap bg-light text-dark">
+						<div class="card_image_list">
+
+							<a class="noteID1 badge badge-pill text-white" style="font-size: 14px"
+								th:href="@{/editarParceiro(id=${parc.id})}">
+								<span th:text="|ID:${parc.id}|">Seasonal</span></a>
+
+							<a class="noteID4 badge badge-pill badge-primary text-white" target="_blank" rel="noopener noreferrer"
+								th:href="${parc.link}">LINK</a>
+
+							<label class="noteID5 badge badge-pill text-white"
+								th:text="${(parc.nome)}"></label>
+
+
+							<img alt="Image" class="img_prod_maior" th:src="|/imagemParceiro/${parc.id}|" />
+
+						</div>
+					</div>
+				</div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Plataforma: ${#strings.abbreviate(parc.plataforma.titulo, 15)}|"></label>
+				</div>
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Descrição: ${#strings.abbreviate(parc.plataforma.descricao, 220)}|"></label>
+				</div>
+
+
+				<!--figcaption class="info-wrap ">
+						<div style="text-align:center">
+							<a th:href="@{/editarParceiro(id=${parc.id})}" class="btn btn-primary " style="font-size: 14px">
+								Editar </a>
+							<a th:href="@{/removerParceiro(id=${parc.id})}" class="btn btn-danger"
+								style="font-size: 14px" data-toggle="modal" data-target="#confirm-modal">Remover</a>
+						</div>
+					</figcaption-->
+			</div>
+		</div>
+	</figure>
+</div>

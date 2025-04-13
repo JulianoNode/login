@@ -1,0 +1,79 @@
+<div class="form-row">
+
+	<div class="form-group col-md-6">
+		<div class="input-box">
+			<label for="link">URL da Afiliação</label>
+		</div>
+		<div>
+			<input type="url" class="form-control" id="link" placeholder="URL da Afiliação" th:field="*{link}"
+				required />
+			<div class="invalid-feedback">Link é requerido.</div>
+		</div>
+	</div>
+
+	<div class="form-group col-md-6">
+		<div class="input-box">
+			<label for="checkout">URL do Check out</label>
+		</div>
+		<div>
+			<input type="url" class="form-control" id="checkout" placeholder="URL do Check out" th:field="*{checkout}"
+				required>
+			<div class="invalid-feedback">URL do Check out é requerido.</div>
+		</div>
+	</div>
+</div>
+
+<div class="form-row">
+
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="valor_do_produto">Valor do Produto</label>
+		</div>
+		<div>
+			<select id="valor_do_produto" class="form-control" th:field="*{valorProduto}">
+				<option value="0">Selecione uma categoria</option>
+				<option th:each="valPro : ${listaValorProdutos}" th:value="${valPro.id}" th:text="${valPro.valor}">
+				</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="qtdParcela">Quantidade de Parcelas</label>
+		</div>
+		<div>
+			<select id="qtdParcela" class="form-control" th:field="*{qtdParcela}">
+				<option value="0">Selecione Parcelas</option>
+				<option th:each="QtdPar : ${listaQtdParcelas}" th:value="${QtdPar.id}" th:text="${QtdPar.parcelamento}">
+				</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="valor_da_parcela">Parcelas</label>
+		</div>
+		<div>
+			<select id="valor_da_parcela" class="form-control" th:field="*{valorParcela}">
+				<option value="0">Valor da Parcela</option>
+				<option th:each="parce : ${listaValorParcelas}" th:value="${parce.id}" th:text="${parce.valor}">
+				</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="pctgDescontos">Desconto %</label>
+		</div>
+		<div>
+			<select id="pctgDescontos" class="form-control" th:field="*{pctgDesconto}">
+				<option value="0">Selecione Desconto</option>
+				<option th:each="pctg : ${listaPctgDescontos}" th:value="${pctg.id}" th:text="${pctg.desconto}">
+				</option>
+			</select>
+		</div>
+	</div>
+</div>

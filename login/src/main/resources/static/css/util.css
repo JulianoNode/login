@@ -1,0 +1,204 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap')
+	;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+
+.img_prod {
+	height: 50px;
+	width: 50px;
+}
+
+.img_prod:hover {
+	-webkit-transform: scale(4);
+	-moz-transform: scale(4);
+	-o-transform: scale(4);
+	-ms-transform: scale(4);
+	transform: scale(4);
+}
+
+.img_prod_listar {
+	height: 40px;
+	width: 45px;
+}
+
+.table {
+	width: 100%;
+	margin-bottom: .5em;
+	table-layout: fixed;
+	text-align: center;
+}
+
+.contatiner_tabela {
+	width: 90%;
+	left: 60px;
+	position: relative;
+}
+
+.gifs {
+	height: 40px;
+	width: 45px;
+}
+
+contatiner {
+	width: 90%;
+	margin-bottom: .5em;
+	table-layout: fixed;
+	text-align: center;
+}
+
+.img_prod_maior {
+	height: 180px;
+	width: 253px;
+}
+
+.list_cent {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.afiliado_A {
+	height: 35px;
+	width: 50px;
+}
+
+
+.afiliado {
+	height: 35px;
+	width: 250px;
+}
+
+.cabecalhoLogin {
+	height: 25px;
+	width: 4%;
+}
+
+.cabecalhoCadastro {
+	height: 25px;
+	width: 6%;
+}
+
+/*Titulo da pagina*/
+.form {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #fff;
+	padding: 1rem 0;
+}
+
+.form-header {
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.form-header h2::after {
+	content: '';
+	display: block;
+	width: 10rem;
+	height: 0.3rem;
+	background-color: #6c63ff;
+	margin: 9 auto;
+	position: inherit;
+	border-radius: 10px;
+}
+
+/*O inputs na tela de cadastro*/
+.input-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.input-box label, .gender-title h6 {
+	font-size: 1.00rem;
+	font-weight: 500;
+	color: #000000c0;
+}
+
+.input-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0.1rem 0;
+}
+
+.input-box {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.15rem;
+}
+
+.input-box input {
+	margin: 0.6rem 0;
+	padding: 0.8rem 8rem;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box input:hover {
+	background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+	outline: 1px solid #6c63ff;
+}
+
+input-box input::placeholder {
+	color: #2e2929be;
+}
+
+/*select na pagina de cadastro*/
+.input-box select {
+	margin: 0.6rem 1;
+	padding: 0.5rem 3rem;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box select:hover {
+	background-color: #eeeeee75;
+}
+
+.input-box select:focus-visible {
+	outline: 1px solid #6c63ff;
+}
+
+input-box select::placeholder {
+	color: #2e2929be;
+}
+
+/*----------------------Imagem de arquivo ---------------------------*/ 
+/*
+ * Footer
+ */
+.layout-footer {
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	height: 50px;
+	border-top: 1px solid #eeeeee;
+}
+
+.footer-copy {
+	font-size: 92%;
+	display: block;
+	color: #777777;
+	text-align: center;
+}

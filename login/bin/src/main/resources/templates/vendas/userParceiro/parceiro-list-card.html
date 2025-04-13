@@ -1,0 +1,40 @@
+<div class="col-md-3" th:each="parc : ${listaParceiros}">
+
+	<figure class="card card-product">
+		<div th:id="${parc.id}" class="card">
+			<!-- Imagem -->
+			<div class="img-wrap bg-light text-dark">
+
+				<div class="input-box">
+					<div class="card img-wrap bg-light text-dark">
+						<div class="card_image_list">
+							<a class="noteID1 badge badge-pill badge-dark text-white" target="_blank"
+								rel="noopener noreferrer" th:href="${parc.link}">LINK</a>
+
+							<label class="noteID5 badge badge-pill text-white" th:text="${(parc.nome)}"></label>
+
+
+							<img alt="Image" class="img_prod_maior" th:src="|/imagemParceiro/${parc.id}|" />
+
+						</div>
+					</div>
+				</div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Plataforma: ${#strings.abbreviate(parc.plataforma.titulo, 15)}|"></label>
+				</div>
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1"
+						th:text="|Descrição: ${#strings.abbreviate(parc.plataforma.descricao, 220)}|"></label>
+				</div>
+				<hr class="id_hr1">
+				<div class="price-wrap h4" style="text-align:center">
+					<a class="btn btn-success btn-sm" target="_blank" rel="noopener noreferrer"
+						th:href="${parc.link}"><span th:text="${(parc.nome)}"></span></a>
+				</div>
+
+			</div>
+		</div>
+	</figure>
+</div>

@@ -1,0 +1,43 @@
+<div class="form-row">
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="nome">Nome do Site</label>
+		</div>
+		<div>
+			<input type="text" class="form-control" id="nome" placeholder="Nome do Site" th:field="*{nome}" required>
+			<div class="invalid-feedback">Nome do Site é requerido.</div>
+		</div>
+	</div>
+
+	<div class="form-group col-md-9">
+		<div class="input-box">
+			<label for="imagem" class="input-box">Image do
+				Site</label>
+		</div>
+		<div>
+			<input type="file" class="form-control" id="imagem" name="fileIndicado">
+		</div>
+	</div>
+</div>
+<div class="form-row">
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="plataforma">Plataforma</label>
+		</div>
+		<div>
+			<select id="plataforma" class="form-control" th:field="*{plataforma}">
+				<option value="0">Selecione uma plataforma</option>
+				<option th:each="plat : ${listaPlataformas}" th:value="${plat.id}" th:text="${plat.titulo}"></option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group col-md-9">
+		<div class="input-box">
+			<label for="nome">URL do Site</label>
+		</div>
+		<div>
+			<input type="url" class="form-control" id="link" placeholder="Link" th:field="*{link}" required />
+			<div class="invalid-feedback">Link é requerido.</div>
+		</div>
+	</div>
+</div>

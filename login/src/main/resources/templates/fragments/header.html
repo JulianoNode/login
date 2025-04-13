@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<nav th:fragment="nav-sidebar">
+		<header th:fragment="cabecalho">
+			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+				<!-- A barra Home -->
+
+				<div class="container-fluid">
+
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo03" sec:authorize="!isAuthenticated()">
+						<div th:insert="fragments/links-header/visitante"></div>
+
+					</div>
+
+
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+						<ul class="navbar-nav mr-auto">
+							<!-- Cadastro do Adiministrador -->
+							<li class="nav-item dropdown" sec:authorize="hasAuthority('ADMIN')"><a
+									class="btn btn-dark dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Administrador</a>
+
+								<div th:insert="fragments/links-header/admin"></div>
+							</li>
+							<!-- Cadastro de Afiliados -->
+							<li class="nav-item dropdown" sec:authorize="hasAuthority('AFILIADO')"><a
+									class="btn btn-dark dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Afiliado</a>
+
+								<div th:insert="fragments/links-header/afiliado"></div>
+							</li>
+							<!-- Categoria, Genero, Fornecedor, Valor Produtos -->
+							<li class="nav-item dropdown" sec:authorize="hasAuthority('AFILIADO')"><a
+									class="btn btn-dark dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Cadastrar</a>
+
+								<div th:insert="fragments/links-header/cadastro"></div>
+							</li>
+							<!-- Produto -->
+							<li class="nav-item dropdown" sec:authorize="hasAuthority('AFILIADO')"><a
+									class="btn btn-dark dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Produtos</a>
+
+								<div th:insert="fragments/links-header/produto"></div>
+							</li>
+							<!-- Produto Listar Card -->
+							<li class="nav-item dropdown" sec:authorize="hasAuthority('AFILIADO')"><a
+									class="btn btn-dark dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">Lista Card</a>
+
+								<div th:insert="fragments/links-header/listarCard"></div>
+							</li>
+						</ul>
+					</div>
+					<!-- Abrindo a pagina de login -->
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<form class="form-inline mt-2 mt-md-0" sec:authorize="!isAuthenticated()">
+						<div class="form-check mb-2 mr-sm-2">
+
+							<a class="btn btn-outline-warning my-2 my-sm-0" role="button" th:href="@{/login}">Login</a>
+
+						</div>
+
+					</form>
+					<!-- Abrindo a pagina de Sait * logout * -->
+					<form th:action="@{/logout}" sec:authorize="isAuthenticated()" method="post"
+						class="form-inline mt-2 mt-md-0">
+
+						<div class="btn-group mb-2 mr-sm-2">
+							<button type="button" class="btn btn-light">
+								<i class="bi bi-person-fill-check"></i> <span class="" sec:authentication="">USER</span>
+							</button>
+							<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+							<div class="dropdown-menu">
+								<button type="submit" class="dropdown-item">Sair</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</nav>
+		</header>
+	</nav>
+</body>
+
+</html>

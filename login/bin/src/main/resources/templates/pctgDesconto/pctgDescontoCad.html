@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+		<main role="main">
+			<div class="album bg-light">
+				<div>
+					<img class="d-block mx-auto" th:src="@{/image/top.png}" width="1080" height="80">
+				</div>
+
+				<div class="container">
+					<div class="container">
+						<h2 class="d-flex justify-content-center">Cadastro
+							Porcenatagem Ou Desconto</h2>
+					</div>
+
+					<hr class="id_hr1">
+					<hr class="id_hr2">
+					<hr class="id_hr3">
+
+					<div class="d-flex justify-content-center">
+						<div class="col-md-12">
+							<div th:replace="fragments/alert"></div>
+							<form th:action="@{/pctgDescontos/salvar}" th:object="${pctgDesconto}" method="POST"
+								class="was-validated">
+
+								<div class="form-group row">
+									<label for="pctgDesconto" class="col-sm-6 col-form-label">Porcenatagem Ou
+										Desconto:</label>
+									<div class="col-sm-12">
+										<input type="text" class="form-control" th:field="*{desconto}"
+											id="pctgDesconto" min="1" max="99" maxlength="9" placeholder="Desconto" required />
+										<div class="invalid-feedback">Min= 1 | Max= 100.</div>
+									</div>
+								</div>
+
+
+								<input type="hidden" th:field="*{id}" />
+
+								<div class="form-group row">
+									<div class="col-sm-10">
+										<button type="submit" class="btn btn-primary" data-toggle="tooltip"
+											data-placement="right" title="Cadastrar">
+											Cadastrar <i class="fas fa-save"></i>
+										</button>
+									</div>
+								</div>
+							</form>
+							<hr class="id_hr">
+							<h2 class="d-flex justify-content-center">Lista
+								Porcenatagem Ou Desconto</h2>
+
+							<hr class="id_hr1">
+							<hr class="id_hr2">
+							<hr class="id_hr3">
+
+							<table id="table-pctgDescontoCrud"
+								class="table table-sm table-striped table-bordered nowrap" style="width: 100%">
+								<thead class="thead-dark">
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">% Desconto</th>
+
+										<th scope="col">Editar</th>
+										<th scope="col">Excluir</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</main>
+	</section>
+	<script th:src="@{/js/cadSystem/pctgDesconto.js?(v=${version})}" th:fragment="js"></script>
+	<script th:inline="javascript" th:fragment="inlinescript"></script>
+</body>
+
+</html>

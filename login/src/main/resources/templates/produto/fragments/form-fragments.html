@@ -1,0 +1,67 @@
+<div class="form-row">
+	<div class="form-group col-md-6">
+		<div class="input-box">
+			<label for="nome">Nome do Produto</label>
+		</div>
+		<div>
+			<input type="text" class="form-control" id="nome" placeholder="Nome do produto" th:field="*{nome}" required>
+			<div class="invalid-feedback">Nome do Curso é requerido.</div>
+		</div>
+	</div>
+	<div class="form-group col-md-6">
+		<div class="input-box">
+			<label for="imagem" class="input-box">Image do
+				produto</label>
+		</div>
+		<div>
+			<input type="file" class="form-control" id="imagem" name="fileProduto">
+		</div>
+	</div>
+</div>
+
+<div class="form-row">
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="categoria">Categoria</label>
+		</div>
+		<div>
+			<select id="categoria" class="form-control" th:field="*{categoria}">
+				<option value="0">Selecione uma categoria</option>
+				<option th:each="cat : ${listaCategorias}" th:value="${cat.id}" th:text="${cat.titulo}"></option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="formato">Formato</label>
+		</div>
+		<div>
+			<select id="formato" class="form-control" th:field="*{formato}">
+				<option value="0">Selecione uma formato</option>
+				<option th:each="for : ${listaFormatos}" th:value="${for.id}" th:text="${for.titulo}"></option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="fornecedor">Fornecedor</label>
+		</div>
+		<div>
+			<select id="fornecedor" class="form-control" th:field="*{fornecedor}">
+				<option value="0">Selecione uma formato</option>
+				<option th:each="forn : ${listaFornecedores}" th:value="${forn.id}" th:text="${forn.nome}"></option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group col-md-3">
+		<div class="input-box">
+			<label for="porclik">Comissão</label>
+		</div>
+		<div>
+			<select id="porclik" class="form-control" th:field="*{porclik}">
+				<option value="0">Selecione uma formato</option>
+				<option th:each="clik : ${listaPorCliks}" th:value="${clik.id}" th:text="${clik.titulo}"></option>
+			</select>
+		</div>
+	</div>
+</div>

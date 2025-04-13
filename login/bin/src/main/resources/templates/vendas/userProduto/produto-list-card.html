@@ -1,0 +1,79 @@
+<div class="col-md-3" th:each="prod : ${listaProdutos}">
+
+	<figure class="card card-product">
+		<div th:id="${prod.id}" class="card">
+			<!-- Imagem -->
+			<div class="img-wrap bg-light text-dark">
+
+				<div class="input-box">
+					<div class="card img-wrap bg-light">
+						<div class="card_image_list">
+
+							<label class="noteID1 badge badge-pill text-white" style="font-size: 14px"
+								th:text="|${#strings.abbreviate(prod.categoria.titulo, 16)}|"></label>
+
+							<label class="noteID2 badge badge-pill badge-warning text-dark" style="font-size: 14px"
+								th:text="|${#strings.abbreviate(prod.formato.titulo, 16)}|"></label>
+
+							<a class="noteID_3 badge badge-pill badge-success text-white" target="_blank"
+								rel="noopener noreferrer" th:href="${prod.checkout}">Check Out</a>
+
+							<a class="noteID4 badge badge-pill badge-primary text-white" th:href="${prod.link}"
+								rel="noopener noreferrer" target="_blank">Produtor</a>
+
+							<label class="noteID5 badge badge-pill badge-warning text-white"
+								th:text="|R$:${#strings.abbreviate(prod.valorProduto.valor, 15)}|"></label>
+
+							<img alt="Image" class="img_prod_maior" th:src="|/imagem/${prod.id}|" />
+
+						</div>
+					</div>
+				</div>
+
+				<div class="input-box" style="font-weight: 600">
+					<label class="title text-dots text-secondary ml-1" style="text-align: center"
+						th:text="|${#strings.abbreviate(prod.nome, 43)}|"></label>
+				</div>
+				<hr class="id_hr2">
+				<hr class="id_hr3">
+
+				<p style="text-align: center">
+					<span th:text="| Referencia do ${prod.categoria.titulo}.|"></span><br>
+
+					<span th:text="| Esse ${prod.categoria.titulo}|"></span>
+					<span th:text="| É ${prod.formato.titulo},|"></span>
+					<span th:text="| Está No Valor De R$:${prod.valorProduto.valor}, |"></span>
+					<span th:text="| Com O Desconto Aprocimadamente De ${prod.pctgDesconto.desconto}% OFF|"></span>
+					<span th:text="| Neste ${prod.categoria.titulo},|"></span>
+					<span th:text="| Com Parcelas de ${prod.qtdParcela.parcelamento}x|"></span>
+					<span th:text="| De R$: ${prod.valorParcela.valor} Por Mes.|"></span>
+				</p>
+
+				<p style="text-align: center">
+					Toda Descrição Do <span th:text="| ${prod.formato.titulo} |"></span> Na Pagina do
+					Produtor, No CHECK OUT Ou Em SAIBA MAIS.
+				</p>
+				<hr class="id_hr1">
+
+
+
+				<div class="price-wrap h4" style="text-align:center">
+					<span class="price-new badge badge-pill badge-danger ml-1"><span
+							th:text="|R$:${prod.valorProduto.valor}|"></span></span>
+				</div>
+				<div class="form-row" style="text-align:center">
+					<div class="form-group col-md-6">
+						<a class="btn btn-success btn-sm" th:href="${prod.checkout}" target="_blank"
+							rel="noopener noreferrer">CHECK OUT</a>
+					</div>
+					<div class="form-group col-md-5">
+						<a class="btn btn-primary btn-sm" th:href="${prod.link}" target="_blank"
+							rel="noopener noreferrer">SAIBA MAIS</a>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</figure>
+</div>

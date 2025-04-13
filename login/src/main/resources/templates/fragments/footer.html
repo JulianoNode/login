@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<footer class="layout-footer" th:fragment="rodape">
+
+		<div id="footer_content">
+			<div id="footer_contacts">
+				<h1>
+					<a class="navbar-brand " th:href="@{/}"> <img class="afiliado" th:src="@{'/image/afiliado1.png'}" />
+					</a>
+				</h1>
+				<p>Tudo sobre seus sonhos você encontra aqui no AfiliadoXP.</p>
+
+				<div id="footer_social_media">
+					<!-- Pagina de ICONES -> https://cdnjs.com/libraries/font-awesome -->
+					<a href="https://www.instagram.com/afiliado_xp" class="footer-link" id="instagram"> <i
+							class="fa-brands fa-instagram"></i>
+					</a> <a href="https://web.facebook.com/people/Afiliado-XP/61553216081092/" class="footer-link"
+						id="facebook"> <i class="fa-brands fa-facebook-f"></i></a>
+
+
+					<!--Link do youtube| https://www.youtube.com/watch?v=LSeMaCTN_AA  * href="https://wa.me/5519994665247" *-->
+
+					<a href="https://wa.me/5519997510774" class="footer-link" id="whatsapp"> <i
+							class="fa-brands fa-whatsapp"></i> </a>
+					<a href="https://www.tiktok.com/@afiliado.xp" class="footer-link" id="tiktok"> <i
+							class="fa-brands fa-tiktok" style="color: #f5f5f5;"></i></a>
+
+				</div>
+			</div>
+
+			<ul class="footer-list">
+				<li>
+					<h3>Referencia</h3>
+				</li>
+				<li><a th:href="@{/Indicados}" class="footer-link">Indicado</a></li>
+				<li><a th:href="@{/Parceiros}" class="footer-link">Parceiros</a></li>
+			</ul>
+
+			<ul class="footer-list">
+				<li>
+					<h3>Produtos</h3>
+				</li>
+				<li><a th:href="@{/Produtos}" class="footer-link">Produtos</a></li>
+				<li><a th:href="@{/Cursos}" class="footer-link">Cursos</a></li>
+				<li><a th:href="@{/Livros}" class="footer-link">Livros</a></li>
+				<li><a th:href="@{/Fisicos}" class="footer-link">Produtos Físicos</a></li>
+			</ul>
+
+			<div id="footer_subscribe">
+				<h3>Se-increver</h3>
+				<p>Digite seu e-mail para ser notificado sobre nossas novidades
+					soluções</p>
+
+				<div id="input_group">
+					<input type="email" id="email">
+					<button>
+						<a href="mailto:afiliadoxp7@gmail.com?">
+							<i class="fa-regular fa-envelope"></i></a>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div id="footer_copyright" style="font-size: 25px">&copy; Nós inicializamos a AfiliadoXP em 2023. Todos os Direitos
+			Reservados.</div>
+		<div id="footer_copyright" style="font-size: 15px">Version: 1.1.2.7.04 | Year 2024</div>
+
+	</footer>
+</body>
+
+</html>

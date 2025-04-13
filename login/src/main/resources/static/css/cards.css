@@ -1,0 +1,270 @@
+body {
+	font-family: "Oxygen", sans-serif;
+	color: #050505;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.main {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.cards_item {
+	display: flex;
+	padding: 1rem;
+}
+
+.card_image {
+	position: relative;
+	max-height: 250px;
+}
+
+.card_image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card_image_list {
+	position: relative;
+	max-height:220px;
+}
+
+.card_image_list img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card_price {
+	position: absolute;
+	bottom: 4px;
+	right: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 25px;
+	border-radius: 0.25rem;
+	background-color: rgb(36, 151, 62);
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.card_price span {
+	font-size: 12px;
+	margin-top: -2px;
+}
+
+.note {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: #e0c501;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.noteID1 {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: #343A40;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.noteID2 {
+	position: absolute;
+	top: 35px;
+	left: 4px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: #e0c501;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.noteID3 {
+	position: absolute;
+	top: 68px;
+	left: 4px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: #e0c501;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.noteID_3 {
+	position: absolute;
+	top: 68px;
+	left: 4px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: rgb(36, 151, 62);
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.noteID4 {
+	position: absolute;
+	top: 100px;
+	left: 4px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: #007BFF;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.noteID5 {
+	position: absolute;
+	top: 133px;
+	left: 4px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: #DC3545;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.noteID6 {
+	position: absolute;
+	top: 133px;
+	left: 4px;
+	padding: 4px 8px;
+	border-radius: 0.25rem;
+	background-color: rgb(36, 151, 62);
+	font-size: 14px;
+	font-weight: 700;
+}
+
+@media (min-width: 40rem) {
+	.cards_item {
+		width: 50%;
+	}
+}
+
+@media (min-width: 56rem) {
+	.cards_item {
+		width: 33.3333%;
+	}
+}
+
+.card {
+	background-color: white;
+	border-radius: 0.25rem;
+	box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.card_content {
+	position: relative;
+	padding: 16px 12px 32px 24px;
+	margin: 16px 8px 8px 0;
+	max-height: 290px;
+	overflow-y: scroll;
+}
+
+.card_content::-webkit-scrollbar {
+	width: 8px;
+}
+
+.card_content::-webkit-scrollbar-track {
+	box-shadow: 0;
+	border-radius: 0;
+}
+
+.card_content::-webkit-scrollbar-thumb {
+	background: #c89b3f;
+	border-radius: 15px;
+}
+
+.card_title {
+	position: relative;
+	margin: 0 0 24px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.card_title::after {
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 2px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #c89b3f;
+	content: "";
+}
+
+hr {
+	margin: 4px auto;
+	width: 200px;
+	border-top: 2px solid rgb(236, 205, 28);
+}
+
+.card_text p {
+	margin: 0 0 24px;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.card_text p:last-child {
+	margin: 0;
+}
+
+/* ----------------------------------- LOADER -------------------------------------------*/
+/* https://www.w3schools.com/howto/howto_css_loader.asp */
+.loader {
+	border: 16px solid #d3e4e3;
+	/* Light grey */
+	border-top: 16px solid #0000ff;
+	/* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.pre-load {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}

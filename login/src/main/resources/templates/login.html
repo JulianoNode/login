@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+	<!-- Pagina de ICONES -> https://cdnjs.com/libraries/font-awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="css/style_login.css">
+	<link th:href="@{/css/footer.css}" rel="stylesheet" />
+
+
+	<link rel="icon" th:href="@{/image/favicon.png}" />
+	<title>AfiliadoXP :: Login</title>
+</head>
+
+<body>
+
+	<form class="form-signin was-validated" method="post" th:action="@{/login}">
+
+		<!-- ---------------------- Main container | Recipiente principal ------------- -->
+		<div class="container d-flex justify-content-center align-items-center min-vh-100">
+			<!-- ---------------------- login container | contêiner de login ------------- -->
+			<div class="row border rounded-3 p-0 shadow box-area" style="background: rgb(255, 203, 45);">
+				<!-- ---------------------- left box | caixa esquerda ------------- -->
+				<div class="col-md-6 rounded-1 d-flex justify-content-center align-items-center flex-column left-box"
+					style="background: #171717;">
+					<div class="featured-image mb-2 top-3 text-center">
+						<br> <img src="image/afiliado1.png" width="300" height="45">
+
+						<img src="image/SVG/login.svg" class="img-fluid" style="width: 400px;">
+						<div>
+							<p class="text-light fs-1"
+								style="font-family: 'Courier New', Courier, monospace; font-weight: 550;">Bem
+								vindo.</p>
+							<small class="text-white text-wrap text-center fs-5"
+								style="width: 17rem; font-family: 'Courier New', Courier, monospace;">
+								Realise o seu login para plataforma.</small>
+						</div>
+					</div>
+				</div>
+
+				<!--  right box | caixa certa  -->
+				<!--  right box | caixa certa  -->
+				<div class="col-md-6 right-box">
+					<div class="text-center mb-4">
+						<div th:if="${alerta != null}"
+							th:class="${alerta == 'erro'} ? 'alert alert-danger' : 'alert alert-success'" role="alert">
+							<h4 th:text="${titulo}" class="alert-heading">Credenciais...</h4>
+							<p th:text="${texto}">Login ou senha incorretos...</p>
+							<hr>
+							<p class="mb-0">
+								<small th:text="${subtexto}">Acesso permitido...</small>
+							</p>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div>
+							<p class="text-center fs-3"
+								style="font-family: 'Courier New', Courier, monospace; font-weight: 550;">
+								Óla, Seja bem vindo!</p>
+						</div>
+
+						<div>
+							<div class="form-label-group">
+								<label for="inputEmail">Email:</label> <input type="email" id="inputEmail"
+									class="form-control" placeholder="Email address" name="username" required autofocus>
+								<div class="invalid-feedback">Use seu email cadastrado
+									como login.</div>
+							</div>
+							<br>
+							<div class="form-label-group">
+								<label for="inputPassword">Senha:</label> <input type="password" id="inputPassword"
+									class="form-control" placeholder="Password" name="password" required>
+								<div class="invalid-feedback">Digite sua senha.</div>
+							</div>
+							<br>
+
+							<div class="input-group mb-5 d-flex justify-content-between">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="form-check">
+									<label for="form-check" class="form-check-label text-secondary">
+										<small>Relembrar:</small>
+									</label>
+								</div>
+								<div class="forgot">
+									<small><a href="#">Esqueceu a senha?</a></small><br> <br>
+								</div>
+
+								<div class="input-group mb-3">
+									<button class="btn btn-lg btn-primary w-100 fs-8"
+										style="font-family: 'Courier New', Courier, monospace; font-weight: 550;">AfiliadoXP
+										:: Entrar</button>
+								</div>
+								<div class="input-group mb-3">
+									<button class="btn btn-lg btn-light w-100 fs-8"
+										style="font-family: 'Courier New', Courier, monospace; font-weight: 550;">
+										<img src="image/google.png" style="width: 20px;"> Faça
+										login no Google
+									</button>
+								</div>
+
+								<div class="row">
+									<small class="fs-5"
+										style="font-family: 'Courier New', Courier, monospace; font-weight: 500;">
+										Não tem Conta? <a href="#">Cadastra-se</a>
+									</small>
+								</div>
+
+
+								<div>
+									<a th:href="@{/}"> <img src="image/home.png" style="width: 35px;"></a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</form>
+	<footer th:replace="~{fragments/footer :: rodape}">
+		<div>footer</div>
+	</footer>
+</body>
+
+</html>

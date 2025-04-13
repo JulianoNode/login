@@ -1,0 +1,21 @@
+Primeiros comandos para subir progeto git
+
+git init 
+
+git branch -M main
+
+git remote add origin https://github.com/afiliadoxp7/APX.git
+
+git status
+
+git add pom.xml src/
+
+git status
+
+git reset src/* nome do arquivo *
+
+git commit -m "first commit APX"
+
+git --set-upstream origin main
+
+git push -u origin main
